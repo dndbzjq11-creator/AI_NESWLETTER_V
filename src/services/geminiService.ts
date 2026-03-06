@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type, ThinkingLevel } from "@google/genai";
 import { NewsletterPreview, NewsletterDetail } from "../types";
 
-const apiKey = process.env.GEMINI_API_KEY || "";
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
 const ai = new GoogleGenAI({ apiKey });
 
 export const generatePreviews = async (topic?: string): Promise<NewsletterPreview[]> => {
